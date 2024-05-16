@@ -10,10 +10,13 @@ class PdfController extends Controller
 {
     public function generatePdf(){
     
-        $name = "sameer";
-        $email = 'maharjansameer2123gmail.com';
-        $pdf = Pdf::loadView('index',compact('name','email'))->setPaper('a4','portrait')->save(public_path('idcard'.time().rand(9999,99999).'.pdf'));
-        return $pdf->stream();
+        // $name = "sameer";
+        // $email = 'maharjansameer2123gmail.com';
+        $name = ['Sameer', 'Ameer'];
+        foreach ($name as $key => $value) {
+            $pdf = Pdf::loadView('index',compact('value'))->setPaper('a4','portrait')->save(public_path('idcard'.time().rand(9999,99999).'.pdf'));
+        }
+        // return $pdf->stream();
 
         
      

@@ -60,12 +60,11 @@
         <img class="id-card-image" src="template1.png" alt="ID Card Image">
         <img class="id-card-profile" src="profile.png" alt="">
         <div class="id-card-info">
-            <p class="id-card-name">Geeta Ojha</p>
-            <p class="id-card-email">geeta@gmail.com</p>
-            <p class="id-card-contact">9865142721</p>
+            <p class="id-card-name">{{ $value }}</p>
+            <p class="id-card-email">maharjansameer111@gmail.com</p>
+            <p class="id-card-contact">9851426273</p>
             <p class="id-card-address">Mahalaxmi-04, Lalitpur</p>
             <p class="id-card-dob">1999 Oct 01</p>
-            <p class="id-card-martial">Married</p>
         </div>
     </div>
 </body>
