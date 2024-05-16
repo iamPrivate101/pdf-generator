@@ -3,48 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ID Card</title>
+<title>ID Card Test</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
+    * {
         margin: 0;
         padding: 0;
-        background-color: #f0f0f0;
+        box-sizing: border-box;
     }
-    .id-card {
-        width: 85.6mm; /* Standard PVC card width */
-        height: 53.98mm; /* Standard PVC card height */
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        padding: 10px;
-        margin: 50px auto;
+    html, body {
+        height: 100%;
+    }
+    .id-card-container {
         position: relative;
-        overflow: hidden;
-    }
-    .id-card img {
         width: 100%;
-        height: auto;
-        border-radius: 5px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .id-card .info {
+    .id-card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         position: absolute;
-        bottom: 10px;
-        left: 10px;
-        color: #333;
+        top: 0;
+        left: 0;
+        z-index: -1; /* Move the image behind the info */
     }
-    .id-card .info h2, .id-card .info p {
-        margin: 0;
+    .id-card-info {
+        position: absolute;
+        top: 63%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #000;
+        font-size: 25px;
+        line-height: 1.5;
+        letter-spacing: 1px; /* Adjust letter spacing */
+    }
+    .id-card-info p {
+        margin-bottom: 10px; /* Adjust line spacing */
+    }
+    .id-card-profile {
+        position: absolute;
+        top: 15%;
+        left: 28%;
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+
     }
 </style>
 </head>
 <body>
-    <div class="id-card">
-        <img src="path_to_your_image.jpg" alt="ID Card Image">
-        <div class="info">
-            <h2>John Doe</h2>
-            <p>ID: 123456789</p>
-            <p>Position: Employee</p>
+    <div class="id-card-container">
+        <img class="id-card-image" src="template1.png" alt="ID Card Image">
+        <img class="id-card-profile" src="profile.png" alt="">
+        <div class="id-card-info">
+            <p class="id-card-name">Geeta Ojha</p>
+            <p class="id-card-email">geeta@gmail.com</p>
+            <p class="id-card-contact">9865142721</p>
+            <p class="id-card-address">Mahalaxmi-04, Lalitpur</p>
+            <p class="id-card-dob">1999 Oct 01</p>
+            <p class="id-card-martial">Married</p>
         </div>
     </div>
 </body>
