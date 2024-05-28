@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\leaflet;
 use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\QrCodeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('generate-pdf', [PdfController::class, 'generatePdf'])->name('generate-pdf');
+
+Route::get('generate-qr', [QrCodeController::class, 'show']);
+
+Route::get('leafletmap', [leaflet::class, 'nepalMap']);
+Route::get('festival/{district?}', [leaflet::class, 'festival']);
